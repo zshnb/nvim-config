@@ -51,6 +51,7 @@ packer.startup({
     use({ "akinsho/toggleterm.nvim", tag = '*' })
     use({"windwp/nvim-ts-autotag"})
     use({"windwp/nvim-autopairs"})
+    use({"Pocco81/auto-save.nvim"})
   end,
   config = {
     display = {
