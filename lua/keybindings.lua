@@ -59,8 +59,6 @@ map("n", "<C-e>", ":Telescope find_files<CR>", opt)
 -- 全局搜索
 map("n", "<C-f>", ":Telescope live_grep<CR>", opt)
 map("n", "<C-l>", "gg=G", opt)
--- toggleterm
-map("n", "<C-t>", "<cmd>ToggleTerm size=10 direction=horizontal<cr>", opt)
 
 
 -- 插件快捷键
