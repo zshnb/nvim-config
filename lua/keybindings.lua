@@ -5,8 +5,6 @@ local map = vim.api.nvim_set_keymap
 -- 复用 opt 参数
 local opt = {noremap = true, silent = true }
 
--- 取消 s 默认功能
--- map("n", "s", "", opt)
 map("n", "<C-s>", "", opt)
 -- windows 分屏快捷键
 map("n", "sv", ":vsp<CR>", opt)
