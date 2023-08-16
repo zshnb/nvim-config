@@ -1,11 +1,12 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
+vim.api.nvim_set_option("clipboard","unnamed")
 local map = vim.api.nvim_set_keymap
 -- 复用 opt 参数
 local opt = {noremap = true, silent = true }
 
 -- 取消 s 默认功能
-map("n", "s", "", opt)
+-- map("n", "s", "", opt)
 map("n", "<C-s>", "", opt)
 -- windows 分屏快捷键
 map("n", "sv", ":vsp<CR>", opt)
@@ -56,7 +57,7 @@ map("n", "<leader>bc", ":BufferLinePickClose<CR>", opt)
 -- 查找文件
 map("n", "<C-e>", ":Telescope find_files<CR>", opt)
 -- 全局搜索
-map("n", "<C-F>", ":Telescope live_grep<CR>", opt)
+map("n", "<C-f>", ":Telescope live_grep<CR>", opt)
 map("n", "<C-l>", "gg=G", opt)
 -- toggleterm
 map("n", "<C-t>", "<cmd>ToggleTerm size=10 direction=horizontal<cr>", opt)
@@ -104,7 +105,7 @@ pluginKeys.mapLSP = function(mapbuf)
   mapbuf("n", "gp", "<cmd>Lspsaga show_line_diagnostics<CR>", opt)
   mapbuf("n", "gj", "<cmd>Lspsaga diagnostic_jump_next<cr>", opt)
   mapbuf("n", "gk", "<cmd>Lspsaga diagnostic_jump_prev<cr>", opt)
-  mapbuf("n", "<leader>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opt)
+  mapbuf("n", "gf", "<cmd>lua vim.lsp.buf.formatting()<CR>", opt)
   -- 没用到
   -- mapbuf('n', '<leader>q', '<cmd>lua vim.diagnostic.setloclist()<CR>', opt)
   -- mapbuf("n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opt)
