@@ -25,7 +25,7 @@ local function my_on_attach(bufnr)
   vim.keymap.set('n', 'r', api.fs.rename, opts('Rename'))
   vim.keymap.set('n', 't.', api.tree.toggle_hidden_filter, opts('Toggle Dotfiles'))
   vim.keymap.set('n', '<F5>', api.tree.reload, opts('Refresh'))
-  vim.keymap.set('n', 's', api.node.run.system, opts('Run System'))
+  vim.keymap.set('n', 'so', api.node.run.system, opts('Run System'))
 end
 nvim_tree.setup({
   git = {
@@ -80,7 +80,7 @@ nvim_tree.setup({
     },
   },
   system_open = {
-    cmd = 'konsole',     -- mac 直接设置为 open
+    cmd = 'vsc',     -- mac 直接设置为 open
   },
   on_attach = my_on_attach
 })

@@ -74,6 +74,11 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  ["JABS.nvim"] = {
+    loaded = true,
+    path = "/Users/zhengsihua/.local/share/nvim/site/pack/packer/start/JABS.nvim",
+    url = "https://github.com/matbme/JABS.nvim"
+  },
   ["auto-save.nvim"] = {
     loaded = true,
     path = "/Users/zhengsihua/.local/share/nvim/site/pack/packer/start/auto-save.nvim",

@@ -54,6 +54,7 @@ map("n", "<leader>bc", ":BufferLinePickClose<CR>", opt)
 -- Telescope
 -- 查找文件
 map("n", "<C-e>", ":Telescope find_files<CR>", opt)
+map("n", "<C-b>", ":Telescope buffers<CR>", opt)
 -- 全局搜索
 map("n", "<C-f>", ":Telescope live_grep<CR>", opt)
 map("n", "<C-l>", "gg=G", opt)
@@ -89,6 +90,7 @@ pluginKeys.telescopeList = {
 pluginKeys.mapLSP = function(mapbuf)
   -- rename
   mapbuf("n", "<C-F6>", "<cmd>Lspsaga rename<CR>", opt)
+  mapbuf("n", "grn", "<cmd>Lspsaga rename<CR>", opt)
   -- code action
   mapbuf("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", opt)
   -- go xx
@@ -102,6 +104,7 @@ pluginKeys.mapLSP = function(mapbuf)
   mapbuf("n", "gj", "<cmd>Lspsaga diagnostic_jump_next<cr>", opt)
   mapbuf("n", "gk", "<cmd>Lspsaga diagnostic_jump_prev<cr>", opt)
   mapbuf("n", "gf", "<cmd>lua vim.lsp.buf.formatting()<CR>", opt)
+  mapbuf("v", "gf", "<cmd>lua vim.lsp.buf.formatting()<CR>", opt)
   -- 没用到
   -- mapbuf('n', '<leader>q', '<cmd>lua vim.diagnostic.setloclist()<CR>', opt)
   -- mapbuf("n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opt)
@@ -137,6 +140,9 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set({ 'n', 'v' }, 'gca', '<cmd>Lspsaga code_action<CR>', opts)
     vim.keymap.set('n', 'gr', '<cmd>Lspsaga lsp_finder<CR>', opts)
     vim.keymap.set('n', 'gf', function()
+      vim.lsp.buf.format { async = true }
+    end, opts)
+    vim.keymap.set('v', 'gf', function()
       vim.lsp.buf.format { async = true }
     end, opts)
   end,

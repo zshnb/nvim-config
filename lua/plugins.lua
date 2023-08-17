@@ -52,6 +52,7 @@ packer.startup({
     use({"windwp/nvim-ts-autotag"})
     use({"windwp/nvim-autopairs"})
     use({"Pocco81/auto-save.nvim"})
+    use 'matbme/JABS.nvim'
   end,
   config = {
     display = {
