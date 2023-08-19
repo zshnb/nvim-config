@@ -20,6 +20,7 @@ local function my_on_attach(bufnr)
   vim.keymap.set('n', 'th', api.node.open.horizontal, opts('Open: Horizontal Split'))
   vim.keymap.set('n', 'c', api.fs.create, opts('Create'))
   vim.keymap.set('n', 'cp', api.fs.copy.node, opts('Copy'))
+  vim.keymap.set('n', 'cu', api.fs.cut, opts('Cut'))
   vim.keymap.set('n', 'p', api.fs.paste, opts('Paste'))
   vim.keymap.set('n', 'd', api.fs.remove, opts('Delete'))
   vim.keymap.set('n', 'r', api.fs.rename, opts('Rename'))
@@ -80,7 +81,7 @@ nvim_tree.setup({
     },
   },
   system_open = {
-    cmd = 'vsc',     -- mac 直接设置为 open
+    cmd = 'open',     -- mac 直接设置为 open
   },
   on_attach = my_on_attach
 })

@@ -5,7 +5,10 @@ local map = vim.api.nvim_set_keymap
 -- 复用 opt 参数
 local opt = {noremap = true, silent = true }
 
+map("v", "c", "", opt)
 map("n", "<C-s>", "<cmd>w<cr>", opt)
+map("n", "<leader>j", "<C-i>", opt)
+map("n", "<leader>k", "<C-o>", opt)
 -- windows 分屏快捷键
 map("n", "sv", ":vsp<CR>", opt)
 map("n", "sh", ":sp<CR>", opt)
@@ -58,6 +61,7 @@ map("n", "<C-b>", ":Telescope buffers<CR>", opt)
 -- 全局搜索
 map("n", "<C-f>", ":Telescope live_grep<CR>", opt)
 map("n", "<C-l>", "gg=G", opt)
+map("n", "<C-Tab>", "<cmd>JABSOpen<CR>", opt)
 
 
 -- 插件快捷键

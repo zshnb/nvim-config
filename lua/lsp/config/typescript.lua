@@ -23,6 +23,9 @@ local opts = {
     ]]
 
     local bufopts = { noremap = true, silent = true, buffer = bufnr }
+    -- config for cmp, need config in every lsp config, see https://vi.stackexchange.com/questions/37989/incorrect-autocomplete-with-javascript-using-nvim-lspconfig
+    vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
+    vim.api.nvim_buf_set_option(bufnr, 'tagfunc', 'v:lua.vim.lsp.tagfunc')
     keymap("n", uConfig.lsp.ts_organize, ":TypescriptOrganizeImports<CR>", bufopts)
     keymap("n", uConfig.lsp.ts_rename_file, ":TypescriptRenameFile<CR>", bufopts)
     keymap("n", uConfig.lsp.ts_add_missing_import, ":TypescriptAddMissingImports<CR>", bufopts)

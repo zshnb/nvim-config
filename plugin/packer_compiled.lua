@@ -74,6 +74,11 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  ["Comment.nvim"] = {
+    loaded = true,
+    path = "/Users/zhengsihua/.local/share/nvim/site/pack/packer/start/Comment.nvim",
+    url = "https://github.com/numToStr/Comment.nvim"
+  },
   ["JABS.nvim"] = {
     loaded = true,
     path = "/Users/zhengsihua/.local/share/nvim/site/pack/packer/start/JABS.nvim",
@@ -179,10 +184,20 @@ _G.packer_plugins = {
     path = "/Users/zhengsihua/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
   },
+  ["nvim-hlslens"] = {
+    loaded = true,
+    path = "/Users/zhengsihua/.local/share/nvim/site/pack/packer/start/nvim-hlslens",
+    url = "https://github.com/kevinhwang91/nvim-hlslens"
+  },
   ["nvim-lspconfig"] = {
     loaded = true,
     path = "/Users/zhengsihua/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
+  },
+  ["nvim-scrollbar"] = {
+    loaded = true,
+    path = "/Users/zhengsihua/.local/share/nvim/site/pack/packer/start/nvim-scrollbar",
+    url = "https://github.com/petertriho/nvim-scrollbar"
   },
   ["nvim-tree.lua"] = {
     loaded = true,

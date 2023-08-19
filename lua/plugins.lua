@@ -38,9 +38,9 @@ packer.startup({
     -- 补全源
     use("hrsh7th/cmp-vsnip")
     use("hrsh7th/cmp-nvim-lsp") -- { name = nvim_lsp }
-    use("hrsh7th/cmp-buffer")  -- { name = 'buffer' },
-    use("hrsh7th/cmp-path")    -- { name = 'path' }
-    use("hrsh7th/cmp-cmdline") -- { name = 'cmdline' }
+    use("hrsh7th/cmp-buffer")   -- { name = 'buffer' },
+    use("hrsh7th/cmp-path")     -- { name = 'path' }
+    use("hrsh7th/cmp-cmdline")  -- { name = 'cmdline' }
 
     -- 常见编程语言代码段
     use("rafamadriz/friendly-snippets")
@@ -49,10 +49,16 @@ packer.startup({
     use("lewis6991/gitsigns.nvim")
     use({ "jose-elias-alvarez/null-ls.nvim", requires = "nvim-lua/plenary.nvim" })
     use({ "akinsho/toggleterm.nvim", tag = '*' })
-    use({"windwp/nvim-ts-autotag"})
-    use({"windwp/nvim-autopairs"})
-    use({"Pocco81/auto-save.nvim"})
+    use({ "windwp/nvim-ts-autotag" })
+    use({ "windwp/nvim-autopairs" })
+    use({ "Pocco81/auto-save.nvim" })
     use 'matbme/JABS.nvim'
+    use {
+      'numToStr/Comment.nvim',
+    }
+    use("kevinhwang91/nvim-hlslens")
+    use("petertriho/nvim-scrollbar")
+
   end,
   config = {
     display = {
