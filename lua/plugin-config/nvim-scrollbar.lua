@@ -62,7 +62,7 @@ require("scrollbar").setup({
       highlight = "DiagnosticVirtualTextInfo",
     },
     Hint = {
-      text = { "-", "=" },
+      text = { "" },
       priority = 5,
       gui = nil,
       color = colors.hint,
@@ -71,7 +71,7 @@ require("scrollbar").setup({
       highlight = "DiagnosticVirtualTextHint",
     },
     Misc = {
-      text = { "-", "=" },
+      text = { "" },
       priority = 6,
       gui = nil,
       color = colors.purple,
@@ -89,7 +89,7 @@ require("scrollbar").setup({
       highlight = "GitSignsAdd",
     },
     GitChange = {
-      text = "┆",
+      text = "󱩼",
       priority = 7,
       gui = nil,
       color = nil,
