@@ -58,6 +58,7 @@ packer.startup({
     }
     use("kevinhwang91/nvim-hlslens")
     use("petertriho/nvim-scrollbar")
+    use 'mfussenegger/nvim-jdtls'
 
   end,
   config = {

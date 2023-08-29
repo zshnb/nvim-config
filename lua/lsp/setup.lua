@@ -57,6 +57,7 @@ mason_config.setup({
 local servers = {
   lua_ls = require("lsp.config.lua"), -- lua/lsp/config/lua.lua
   tsserver = require("lsp.config.typescript"),
+  clangd = require("lsp.config.c"),
 }
 
 for name, config in pairs(servers) do
