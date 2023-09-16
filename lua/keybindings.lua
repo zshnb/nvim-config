@@ -2,7 +2,7 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 local map = vim.api.nvim_set_keymap
 -- 复用 opt 参数
-local opt = {noremap = true, silent = true }
+local opt = { noremap = true, silent = true }
 
 map("v", "c", "", opt)
 map("n", "<C-s>", "<cmd>w<cr>", opt)
@@ -153,27 +153,35 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
 -- nvim-cmp 自动补全
 pluginKeys.cmp = function(cmp)
-    return {
-        -- 出现补全
-        ["<A-.>"] = cmp.mapping(cmp.mapping.complete(), {"i", "c"}),
-        -- 取消
-        ["<A-,>"] = cmp.mapping({
-            i = cmp.mapping.abort(),
-            c = cmp.mapping.close()
-        }),
-        -- 上一个
-        ["<Up>"] = cmp.mapping.select_prev_item(),
-        -- 下一个
-        ["<Down>"] = cmp.mapping.select_next_item(),
-        -- 确认
-        ["<CR>"] = cmp.mapping.confirm({
-            select = true,
-            behavior = cmp.ConfirmBehavior.Replace
-        }),
-        -- 如果窗口内容太多，可以滚动
-        ["<C-u>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), {"i", "c"}),
-        ["<C-d>"] = cmp.mapping(cmp.mapping.scroll_docs(4), {"i", "c"}),
-    }
+  return {
+    -- 出现补全
+    ["<A-.>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
+    -- 取消
+    ["<A-,>"] = cmp.mapping({
+      i = cmp.mapping.abort(),
+      c = cmp.mapping.close()
+    }),
+    -- 上一个
+    ["<Up>"] = cmp.mapping.select_prev_item(),
+    -- 下一个
+    ["<Down>"] = cmp.mapping.select_next_item(),
+    -- 确认
+    ["<CR>"] = cmp.mapping.confirm({
+      select = true,
+      behavior = cmp.ConfirmBehavior.Replace
+    }),
+    -- 如果窗口内容太多，可以滚动
+    ["<C-u>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), { "i", "c" }),
+    ["<C-d>"] = cmp.mapping(cmp.mapping.scroll_docs(4), { "i", "c" }),
+    ["<Tab>"] = cmp.mapping(function(fallback)
+      -- This little snippet will confirm with tab, and if no entry is selected, will confirm the first item
+      if cmp.visible() then
+        cmp.confirm()
+      else
+        fallback()
+      end
+    end, { "i", "s", "c", }),
+  }
 end
 
 return pluginKeys
