@@ -14,7 +14,6 @@ local function my_on_attach(bufnr)
   -- default mappings
   api.config.mappings.default_on_attach(bufnr)
   -- custom mappings
-  vim.keymap.set('n', '<CR>', api.node.open.edit, opts('Open'))
   vim.keymap.set('n', 'o', api.node.open.edit, opts('Open'))
   vim.keymap.set('n', 'tv', api.node.open.vertical, opts('Open: Vertical Split'))
   vim.keymap.set('n', 'th', api.node.open.horizontal, opts('Open: Horizontal Split'))
@@ -27,6 +26,7 @@ local function my_on_attach(bufnr)
   vim.keymap.set('n', 't.', api.tree.toggle_hidden_filter, opts('Toggle Dotfiles'))
   vim.keymap.set('n', '<F5>', api.tree.reload, opts('Refresh'))
   vim.keymap.set('n', 'so', api.node.run.system, opts('Run System'))
+  vim.keymap.set('n', 'i', api.node.show_info_popup)
 end
 nvim_tree.setup({
   git = {
