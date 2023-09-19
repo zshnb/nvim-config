@@ -26,7 +26,6 @@ local function my_on_attach(bufnr)
   vim.keymap.set('n', 't.', api.tree.toggle_hidden_filter, opts('Toggle Dotfiles'))
   vim.keymap.set('n', '<F5>', api.tree.reload, opts('Refresh'))
   vim.keymap.set('n', 'so', api.node.run.system, opts('Run System'))
-  vim.keymap.set('n', 'i', api.node.show_info_popup)
 end
 nvim_tree.setup({
   git = {
