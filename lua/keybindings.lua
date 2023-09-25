@@ -1,4 +1,5 @@
 vim.o.guifont = "FiraCode Nerd Font:style=Retina:h12" -- config for neovide
+vim.g.neovide_input_macos_alt_is_meta = true
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 local map = vim.api.nvim_set_keymap
