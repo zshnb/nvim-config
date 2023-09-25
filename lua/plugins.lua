@@ -54,7 +54,8 @@ packer.startup({
     use({ "Pocco81/auto-save.nvim" })
     use 'matbme/JABS.nvim'
     use {
-      'numToStr/Comment.nvim',
+      'terrortylor/nvim-comment',
+      requires = "JoosepAlviste/nvim-ts-context-commentstring"
     }
     use("kevinhwang91/nvim-hlslens")
     use("petertriho/nvim-scrollbar")
